@@ -53,6 +53,25 @@ public interface IStaticDataEnum<T> {
     }
 
     /**
+     * 根据名称查询枚举数据
+     * @param sdds 枚举数组
+     * @param name 枚举名称
+     * @param <S>  枚举类型
+     * @return 枚举对象
+     */
+    @SuppressWarnings("rawtypes")
+    static <S extends IStaticDataEnum> S queryByName(S[] sdds, String name) {
+        if (StrUtil.isNotBlank(name)) {
+            for (S sdd : sdds) {
+                if (StrUtil.equals(name, sdd.getCnName())) {
+                    return sdd;
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
      * 根据数据值查询枚举数据
      * @param sdds  枚举数据
      * @param value 枚举值
