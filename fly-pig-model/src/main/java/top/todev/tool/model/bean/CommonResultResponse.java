@@ -8,6 +8,7 @@ import top.todev.tool.model.exception.NotExceptException;
 
 import java.io.Serializable;
 
+import static top.todev.tool.model.constant.BaseErrorCodeEnum.ERROR_CODE_0;
 import static top.todev.tool.model.constant.BaseErrorCodeEnum.ERROR_CODE_999902;
 
 /**
@@ -103,6 +104,7 @@ public class CommonResultResponse<T> implements Serializable, IResultResponse<T>
 
     public CommonResultResponse<T> initSuccess(T data) {
         this.success = true;
+        this.code = ERROR_CODE_0.getValue();
         this.data = data;
         return this;
     }
@@ -119,57 +121,5 @@ public class CommonResultResponse<T> implements Serializable, IResultResponse<T>
         this.code = code;
         this.message = message;
         return this;
-    }
-
-    @Override
-    public String getErrorCode() {
-        return this.code;
-    }
-
-    @Override
-    public String getErrorMessage() {
-        return this.message;
-    }
-
-    /**
-     * 获取响应结果数据
-     *
-     * @param response 响应实体
-     * @param <T>      结果数据泛型
-     * @return 响应结果
-     */
-    public static <T> T getResponseData(CommonResultResponse<T> response) {
-        if (response != null && response.getSuccess() != null && response.getSuccess()) {
-            return response.getData();
-        }
-        return null;
-    }
-
-    /**
-     * 获取响应结果数据
-     *
-     * @return 响应结果
-     * @throws NotExceptException 不期望的异常
-     */
-    public static <T> T getResponseDataNotAllowNull(CommonResultResponse<T> response) throws NotExceptException {
-        T data = getResponseDataAllowNull(response);
-        if (data == null) {
-            throw new NotExceptException(ERROR_CODE_999902);
-        }
-        return data;
-    }
-
-    /**
-     * 获取响应数据
-     *
-     * @return 响应结果
-     * @throws NotExceptException 不期望的异常
-     */
-    public static <T> T getResponseDataAllowNull(CommonResultResponse<T> response) throws NotExceptException {
-        if (response.getSuccess() == null || !response.getSuccess()) {
-            throw new NotExceptException("响应失败:({}){}", response.getCode(),
-                    StrUtil.isBlank(response.getMessage()) ? "原因未知" : response.getMessage());
-        }
-        return response.getData();
     }
 }

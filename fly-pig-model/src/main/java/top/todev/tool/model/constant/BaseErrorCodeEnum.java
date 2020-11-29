@@ -16,6 +16,8 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum BaseErrorCodeEnum implements IStaticDataEnum<String> {
 
+    /** 成功 */
+    ERROR_CODE_0("ERROR_CODE_0", "成功", "0"),
     /** 不期望发生的异常 */
     ERROR_CODE_999901("ERROR_CODE_999901", "不期望发生的异常", "999901"),
     /** 数据为空异常 */

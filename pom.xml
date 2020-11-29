@@ -11,10 +11,14 @@
     <name>飞猪工具集</name>
     <modules>
         <module>fly-pig-model</module>
+        <module>fly-pig-util</module>
+        <module>fly-pig-config</module>
     </modules>
 
 
     <properties>
+        <spring.boot.version>2.3.4.RELEASE</spring.boot.version>
+        <jackson.version>2.11.2</jackson.version>
         <fastjson.version>1.2.73</fastjson.version>
         <hutool.version>5.4.0</hutool.version>
         <lombok.version>1.18.12</lombok.version>
@@ -57,8 +61,33 @@
                 <artifactId>fly-pig-model</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>top.todev.tool</groupId>
+                <artifactId>fly-pig-util</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
             <!-- 三方库 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-parameter-names</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>

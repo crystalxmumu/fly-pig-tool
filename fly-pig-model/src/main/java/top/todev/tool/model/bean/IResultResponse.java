@@ -1,5 +1,10 @@
 package top.todev.tool.model.bean;
 
+import cn.hutool.core.util.StrUtil;
+import top.todev.tool.model.exception.NotExceptException;
+
+import static top.todev.tool.model.constant.BaseErrorCodeEnum.ERROR_CODE_999902;
+
 /**
  * <p>
  * 返回数据实体接口
@@ -21,17 +26,58 @@ public interface IResultResponse<T> {
      * 返回错误码
      * @return 错误码
      */
-    String getErrorCode();
+    String getCode();
 
     /**
      * 返回错误原因
      * @return 错误原因
      */
-    String getErrorMessage();
+    String getMessage();
 
     /**
      * 返回成功数据
      * @return 成功数据
      */
     T getData();
+
+    /**
+     * 获取响应结果数据
+     * @param response 响应实体
+     * @return 响应结果
+     */
+    static <T> T getResponseData(IResultResponse<T> response) {
+        if (response != null && response.getSuccess() != null && response.getSuccess()) {
+            return response.getData();
+        }
+        return null;
+    }
+
+    /**
+     * 获取响应结果数据
+     * @param response 响应实体
+     * @return 响应结果
+     * @throws NotExceptException 不期望的异常
+     */
+    static <T> T getResponseDataNotAllowNull(IResultResponse<T> response) throws NotExceptException {
+        T data = getResponseDataAllowNull(response);
+        if (data == null) {
+            throw new NotExceptException(ERROR_CODE_999902);
+        }
+        return data;
+    }
+
+    /**
+     * 获取响应数据
+     * @param response 响应实体
+     * @return 响应结果
+     * @throws NotExceptException 不期望的异常
+     */
+    static <T> T getResponseDataAllowNull(IResultResponse<T> response) throws NotExceptException {
+        if (response == null) {
+            throw new NotExceptException(ERROR_CODE_999902);
+        } else if( response.getSuccess() == null || !response.getSuccess()) {
+            throw new NotExceptException(response.getCode(), StrUtil.isBlank(response.getMessage()) ? "响应失败, 原因未知" : response.getMessage());
+        }
+        return response.getData();
+    }
 }
