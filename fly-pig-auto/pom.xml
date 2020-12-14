@@ -9,21 +9,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>fly-pig-model</artifactId>
+    <artifactId>fly-pig-auto</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
+            <groupId>top.todev.tool</groupId>
+            <artifactId>fly-pig-util</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
+            <groupId>top.todev.tool</groupId>
+            <artifactId>fly-pig-model</artifactId>
         </dependency>
     </dependencies>
 </project>
