@@ -23,7 +23,7 @@
         <fastjson.version>1.2.73</fastjson.version>
         <hutool.version>5.5.2</hutool.version>
         <freemarker.version>2.3.30</freemarker.version>
-        <lombok.version>1.18.12</lombok.version>
+        <lombok.version>1.18.16</lombok.version>
         <slf4j.version>1.7.30</slf4j.version>
         <junit.platform.version>1.6.2</junit.platform.version>
         <junit.jupiter.version>5.6.2</junit.jupiter.version>
