@@ -102,6 +102,7 @@ public class CommonResultResponse<T> implements Serializable, IResultResponse<T>
         this.data = data;
     }
 
+    @Override
     public CommonResultResponse<T> initSuccess(T data) {
         this.success = true;
         this.code = ERROR_CODE_0.getValue();
@@ -109,6 +110,7 @@ public class CommonResultResponse<T> implements Serializable, IResultResponse<T>
         return this;
     }
 
+    @Override
     public CommonResultResponse<T> initFailure(IStaticDataEnum<String> error) {
         this.success = false;
         this.code = error.getValue();
@@ -116,6 +118,7 @@ public class CommonResultResponse<T> implements Serializable, IResultResponse<T>
         return this;
     }
 
+    @Override
     public CommonResultResponse<T> initFailure(String code, String message) {
         this.success = false;
         this.code = code;
