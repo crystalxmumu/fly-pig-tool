@@ -37,7 +37,7 @@ public class FreeMarkerUtil {
 	 * @throws TemplateException 模板异常
 	 */
 	public static String processTemplate(Map<String, Object> map,String templateContent) throws IOException, TemplateException {
-		return processTemplate(map, templateContent, Locale.CHINA, ENCODING_GBK);
+		return processTemplate(map, templateContent, Locale.CHINA, ENCODING_UTF8);
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class FreeMarkerUtil {
 	 * @throws TemplateException 模板异常
 	 */
 	public static String processTemplate(Map<String, Object> map,String templateContent,Locale locale,String encoding) throws IOException, TemplateException {
-		Configuration cfg = new Configuration(Configuration.getVersion());
+		Configuration cfg = new Configuration(Configuration.VERSION_2_3_28);
 		cfg.setEncoding(locale, encoding);
 		cfg.setWhitespaceStripping(true);
 		cfg.setTagSyntax(Configuration.AUTO_DETECT_TAG_SYNTAX);
@@ -77,7 +77,7 @@ public class FreeMarkerUtil {
 	public static String processTemplate(Class<?> clazz, String templateName, String encoding, Map<String, Object> map) throws IOException, TemplateException {
 		//log.info("获取Freemarker的Configuration");
 		log.debug("获取Freemarker的Configuration：class:"+clazz.getName()+",pathPrefix:"+"ftl"+",locale:"+Locale.CHINA.getDisplayCountry()+",encoding:"+encoding);
-		Configuration cfg = new Configuration(Configuration.getVersion());
+		Configuration cfg = new Configuration(Configuration.VERSION_2_3_28);
 		cfg.setClassForTemplateLoading(clazz, "ftl");
 		cfg.setEncoding(Locale.CHINA, encoding);
 		cfg.setWhitespaceStripping(true);
@@ -112,7 +112,7 @@ public class FreeMarkerUtil {
 	 * @throws IOException IO异常
 	 */
 	public static Template getTemplate(Class<?> clazz, String templateName) throws IOException{
-		log.info("加载FreeMarker的Template");
+		log.debug("加载FreeMarker的Template");
 		log.debug("加载FreeMarker的Template:class"+clazz.getName()+",templateName:"+templateName);
 		return getConfiguration(clazz).getTemplate(templateName);
 	}
@@ -124,7 +124,7 @@ public class FreeMarkerUtil {
 	 * @return 模板配置类
 	 */
 	public static Configuration getConfiguration(Class<?> clazz){
-		return getConfiguration(clazz, "ftl", Locale.CHINA, ENCODING_GBK);
+		return getConfiguration(clazz, "ftl", Locale.CHINA, ENCODING_UTF8);
 	}
 
 	/**
@@ -134,7 +134,7 @@ public class FreeMarkerUtil {
 	 * @return 模板配置类
 	 */
 	public static Configuration getConfiguration(Class<?> clazz, String pathPrefix){
-		return getConfiguration(clazz, pathPrefix, Locale.CHINA, ENCODING_GBK);
+		return getConfiguration(clazz, pathPrefix, Locale.CHINA, ENCODING_UTF8);
 	}
 
 	/**
@@ -157,9 +157,9 @@ public class FreeMarkerUtil {
 	 */
 	public static Configuration getConfiguration(Class<?> clazz, String pathPrefix, Locale locale, String encoding) {
 
-		log.info("获取Freemarker的Configuration");
+		log.debug("获取Freemarker的Configuration");
 		log.debug("获取Freemarker的Configuration：class:"+clazz.getName()+",pathPrefix:"+pathPrefix+",locale:"+locale.getDisplayCountry()+",encoding:"+encoding);
-		Configuration cfg = new Configuration(Configuration.getVersion());
+		Configuration cfg = new Configuration(Configuration.VERSION_2_3_28);
 		cfg.setClassForTemplateLoading(clazz, pathPrefix);
 		cfg.setEncoding(locale, encoding);
 		cfg.setWhitespaceStripping(true);
