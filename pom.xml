@@ -8,7 +8,7 @@
     <artifactId>fly-pig-tool</artifactId>
     <packaging>pom</packaging>
     <version>0.0.2</version>
-    <name>飞猪工具集</name>
+    <description>飞猪工具集</description>
     <modules>
         <module>fly-pig-model</module>
         <module>fly-pig-util</module>
