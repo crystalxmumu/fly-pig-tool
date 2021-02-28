@@ -9,6 +9,8 @@ import java.time.format.TextStyle;
 import java.util.Date;
 import java.util.Locale;
 
+import static java.time.format.DateTimeFormatter.BASIC_ISO_DATE;
+
 /**
  * <p>
  * 本地日期对象工具类
@@ -102,5 +104,18 @@ public class LocalDateUtil {
         ZoneId zoneId = ZoneId.systemDefault();
         ZonedDateTime zdt = localDateTime.atZone(zoneId);
         return Date.from(zdt.toInstant());
+    }
+
+    /**
+     * <p>从年、月日转化为LocalDate</p>
+     * @param year 年
+     * @param monthAndDay 月日
+     * @return java.time.LocalDate
+     * @author 小飞猪
+     * @date 2021/2/27 7:07
+     * @since 0.0.1
+     */
+    public static LocalDate fromPureDate(int year, String monthAndDay) {
+        return LocalDate.parse(year + monthAndDay, BASIC_ISO_DATE);
     }
 }
