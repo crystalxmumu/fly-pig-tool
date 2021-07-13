@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>top.todev.tool</groupId>
     <artifactId>fly-pig-tool</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.3</version>
     <name>Fly Pig Tool For Java</name>
     <description>飞猪工具集</description>
     <url>https://github.com/crystalxmumu/fly-pig-tool</url>
@@ -119,7 +117,8 @@
         <connection>scm:git:ssh://git@github.com:crystalxmumu/fly-pig-tool.git</connection>
         <developerConnection>scm:git:ssh://git@github.com:crystalxmumu/fly-pig-tool.git</developerConnection>
         <url>https://github.com/crystalxmumu/fly-pig-tool/tree/master</url>
-    </scm>
+      <tag>v0.0.3</tag>
+  </scm>
 
 
 
