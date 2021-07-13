@@ -7,7 +7,7 @@
     <groupId>top.todev.tool</groupId>
     <artifactId>fly-pig-tool</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.2</version>
+    <version>0.0.3-SNAPSHOT</version>
     <name>Fly Pig Tool For Java</name>
     <description>飞猪工具集</description>
     <url>https://github.com/crystalxmumu/fly-pig-tool</url>
@@ -116,9 +116,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git@github.com:crystalxmumu/fly-pig-tool.git</connection>
-        <developerConnection>scm:git@github.com:crystalxmumu/fly-pig-tool.git</developerConnection>
-        <url>git@github.com:crystalxmumu/fly-pig-tool.git</url>
+        <connection>scm:git:ssh://git@github.com:crystalxmumu/fly-pig-tool.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:crystalxmumu/fly-pig-tool.git</developerConnection>
+        <url>https://github.com/crystalxmumu/fly-pig-tool/tree/master</url>
     </scm>
 
 
