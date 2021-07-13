@@ -152,6 +152,7 @@ public class FreeMarkerUtil {
 	 * 获取Freemarker的配置对象
 	 * @param clazz 模板所在位置类
 	 * @param pathPrefix 模板路径前缀
+	 * @param locale 时区
 	 * @param encoding 编码
 	 * @return 模板配置类
 	 */
