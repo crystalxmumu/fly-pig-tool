@@ -114,7 +114,7 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/crystalxmumu/fly-pig-tool.git</connection>
+        <connection>scm:git:git@github.com:crystalxmumu/fly-pig-tool.git</connection>
         <developerConnection>scm:git:git@github.com:crystalxmumu/fly-pig-tool.git</developerConnection>
         <url>https://github.com/crystalxmumu/fly-pig-tool</url>
   </scm>
