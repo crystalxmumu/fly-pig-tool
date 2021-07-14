@@ -114,10 +114,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:ssh://git@github.com:crystalxmumu/fly-pig-tool.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:crystalxmumu/fly-pig-tool.git</developerConnection>
-        <url>https://github.com/crystalxmumu/fly-pig-tool/tree/master</url>
-      <tag>v0.0.3</tag>
+        <connection>scm:git:https://github.com/crystalxmumu/fly-pig-tool.git</connection>
+        <developerConnection>scm:git:https://github.com/crystalxmumu/fly-pig-tool.git</developerConnection>
+        <url>https://github.com/crystalxmumu/fly-pig-tool</url>
   </scm>
 
 
