@@ -77,4 +77,25 @@ public interface IBaseAction {
             return result.initFailure(ERROR_CODE_999903);
         }
     }
+
+    /**
+     * <p>处理带包装的响应数据</p>
+     * @param impl 接口处理
+     * @return 带包装的响应数据
+     * @author 小飞猪
+     * @date 2021/9/19 6:05
+     * @since 0.0.1
+     */
+    default <T> IResultResponse<T> dealWrapper(Supplier<IResultResponse<T>> impl) {
+        CommonResultResponse<T> result = new CommonResultResponse<>();
+        try {
+            return impl.get();
+        } catch (NotExceptException e) {
+            log.warn("发生错误,原因:{}", e.getMessage());
+            return result.initFailure(e.getErrorCode(), e.getMessage());
+        } catch (Exception e){
+            log.warn("发生错误", e);
+            return result.initFailure(ERROR_CODE_999903);
+        }
+    }
 }
