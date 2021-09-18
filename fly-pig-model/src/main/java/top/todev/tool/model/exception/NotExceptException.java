@@ -42,7 +42,8 @@ public class NotExceptException extends RuntimeException implements Serializable
 	/**
 	 * <p>
 	 * 模板方式创建异常
-	 * </p
+	 * </p>
+	 * @param errorCode 错误码
 	 * @param msg 字符串模板
 	 * @param args 参数
 	 */

@@ -19,7 +19,7 @@ public class CacheConfigProperties implements Serializable {
     private static final long serialVersionUID = -3850239330429268664L;
 
     /**
-     * 缓存配置Map<br/>
+     * 缓存配置Map
      * key为缓存前缀,value为缓存缺省有效时间(秒)
      */
     private Map<String, Long> configMap = new HashMap<>();

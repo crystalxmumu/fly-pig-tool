@@ -21,7 +21,7 @@ public interface IStaticDataEnum<T> {
     String getCode();
 
     /**
-     * 获取枚举名称<br/>
+     * 获取枚举名称
      * 该名称不能和枚举名称冲突
      * @return 枚举名称
      */
@@ -75,7 +75,8 @@ public interface IStaticDataEnum<T> {
      * 根据数据值查询枚举数据
      * @param sdds  枚举数据
      * @param value 枚举值
-     * @param <S>   枚举值类型
+     * @param <S> 枚举类型
+     * @param <T> 枚举值类型
      * @return 枚举对象
      */
     @SuppressWarnings("rawtypes")

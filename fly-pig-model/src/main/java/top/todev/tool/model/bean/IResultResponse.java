@@ -66,6 +66,7 @@ public interface IResultResponse<T> {
 
     /**
      * 获取响应结果数据
+     * @param <T> 相应类型
      * @param response 响应实体
      * @return 响应结果
      */
@@ -80,6 +81,7 @@ public interface IResultResponse<T> {
      * 获取响应结果数据
      * @param response 响应实体
      * @return 响应结果
+     * @param <T> 响应类型
      * @throws NotExceptException 不期望的异常
      */
     static <T> T getResponseDataNotAllowNull(IResultResponse<T> response) throws NotExceptException {
@@ -93,6 +95,7 @@ public interface IResultResponse<T> {
     /**
      * 获取响应数据
      * @param response 响应实体
+     * @param <T> 响应类型
      * @return 响应结果
      * @throws NotExceptException 不期望的异常
      */

@@ -21,6 +21,7 @@ public class ConvertUtil {
      * <p>将源类实例转换为目标类实例</p>
      * @param sourceObj 源类实例
      * @param targetClz 目标类
+     * @param <T> 目标类型
      * @return T 目标类实例
      * @author 小飞猪
      * @date 2020/12/14 9:16
@@ -46,7 +47,9 @@ public class ConvertUtil {
      * <p>将源类实例列表转换为目标类实例列表</p>
      * @param sources 源类实例列表
      * @param targetClz 目标类实例类型
-     * @return java.util.List<T> 目标类实例列表
+     * @param <S> 源类型
+     * @param <T> 目标类型
+     * @return 目标类实例列表
      * @author 小飞猪
      * @date 2020/12/14 9:17
      * @since 0.0.2
