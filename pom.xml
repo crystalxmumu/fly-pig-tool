@@ -5,7 +5,7 @@
     <groupId>top.todev.tool</groupId>
     <artifactId>fly-pig-tool</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.4</version>
     <name>Fly Pig Tool For Java</name>
     <description>飞猪工具集</description>
     <url>https://github.com/crystalxmumu/fly-pig-tool</url>
